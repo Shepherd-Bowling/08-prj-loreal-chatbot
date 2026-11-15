@@ -1,64 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="page-wrapper">
-      <!------- Header / Branding ------->
-      <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
-      </header>
-
-      <!------- Chat Area ------->
-      <main>
-        <section class="chatbox">
-          <div id="chatWindow" class="chat-window">
-            <!-- messages will be appended here via JS -->
-          </div>
-
-          <form id="chatForm" class="chat-form">
-            <label for="userInput" class="visually-hidden">Message</label>
-            <input
-              id="userInput"
-              name="userInput"
-              type="text"
-              placeholder="Ask me about products or routines…"
-              autocomplete="off"
-              required
-            />
-            <button type="submit" id="sendBtn">
-              <span class="material-icons">send</span>
-              <span class="visually-hidden">Send</span>
-            </button>
-          </form>
-        </section>
-      </main>
-
-      <!------- Footer Links ------->
-      <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
-        <nav>
-          <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
-        </nav>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f3">
+  <title>L’Oréal Paris | Beauty Advisor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <img src="img/loreal-logo.png" alt="L’Oréal" width="145">
+    <span>Beauty Advisor</span>
+  </header>
+  <main class="layout">
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">Beauty, made <em>personal.</em></h1>
+      <p>Find L’Oréal Paris products and build a routine around your skin, hair, and personal style.</p>
+      <h2>What are you exploring?</h2>
+      <div class="topics" aria-label="Suggested questions">
+        <button type="button" data-prompt="Can you help me build a simple L’Oréal Paris skincare routine?">Skincare <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="Which L’Oréal Paris haircare products could help with dry hair?">Haircare <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="Which L’Oréal Paris makeup products work for a natural everyday look?">Makeup <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="Does L’Oréal Paris offer fragrance options, and what should I look for?">Fragrance <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+    <section class="chat" aria-labelledby="chat-title">
+      <header class="chat-header"><h2 id="chat-title">Your beauty consultation</h2><button type="button" id="reset">New chat</button></header>
+      <div id="messages" role="log" aria-label="Conversation" tabindex="0">
+        <p class="bubble advisor">Welcome! Tell me what you’d like help with, or pick a topic to get started.</p>
+      </div>
+      <p id="status" role="status"></p>
+      <form id="chat-form">
+        <label for="question" class="visually-hidden">Your question</label>
+        <input id="question" name="question" maxlength="1200" required placeholder="Ask about a product or routine…" autocomplete="off">
+        <button id="send" type="submit">Send <span aria-hidden="true">↑</span></button>
+      </form>
+    </section>
+  </main>
+  <footer><p>Student project · AI-generated advice</p><a href="https://www.lorealparisusa.com/">Explore L’Oréal Paris ↗</a></footer>
+</body>
 </html>
